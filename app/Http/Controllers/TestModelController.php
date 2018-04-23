@@ -4,10 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
-use Hisune\EchartsPHP\ECharts;
-use Hisune\EchartsPHP\Doc\IDE\YAxis;
+use App\Praise;
 
-class HomeController extends Controller
+class TestModelController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -26,6 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $praises = Praise::all();
+        print_r($praises->toArray());
     }
 }

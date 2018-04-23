@@ -18,3 +18,10 @@ Route::get('/', function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/testModel', 'TestModelController@index');
+
+Route::group(['prefix'=>'testChart'], function () {
+    Route::get('/', 'TestChartController@index');
+    Route::get('bar_stack', 'TestChartController@index');
+    Route::get('bar_simple', 'TestChartController@bar_simple');
+});
